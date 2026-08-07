@@ -54,8 +54,8 @@ body::before {
     background-image: url("../images/compass-watermark.PNG");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 65%;
-    opacity: .04;
+    background-size: 80%;
+    opacity: .05;
     z-index: -1;
     pointer-events: none;
 }
