@@ -42,7 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
             loadAssignment(assignment.assignment)
     .then(data => {
 
-                status.innerHTML = `
+    console.log(data);
+    alert("Assignment loaded");
+
+    status.innerHTML = `
                 <div class="classification-banner">
 
                     THE SOCIETY OF EXPLORATION
