@@ -1,0 +1,24 @@
+{
+  "assignments": [
+    {
+      "reference": "SOE-0908-I",
+      "assignment": "assignment-1.json",
+      "status": "sealed"
+    },
+    {
+      "reference": "SOE-0908-II",
+      "assignment": "assignment-2.json",
+      "status": "sealed"
+    },
+    {
+      "reference": "SOE-0908-III",
+      "assignment": "assignment-3.json",
+      "status": "sealed"
+    },
+    {
+      "reference": "SOE-0908-IV",
+      "assignment": "assignment-4.json",
+      "status": "sealed"
+    }
+  ]
+}
