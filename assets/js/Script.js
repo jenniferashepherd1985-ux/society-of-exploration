@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 return;
             }
-alert("Button clicked");
+
             status.innerHTML = `
                 <h2>Consulting the Society...</h2>
 
