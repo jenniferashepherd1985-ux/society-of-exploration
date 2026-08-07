@@ -10,5 +10,44 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => {
         console.error(error);
     });
-
+    const form = document.getElementById("archive-form");
+    const status = document.getElementById("archive-status");
+    
+    form.addEventListener("submit", function (event) {
+    
+        event.preventDefault();
+    
+        const reference = document
+            .getElementById("archiveRef")
+            .value
+            .trim()
+            .toUpperCase();
+    
+        const assignment = assignments.find(
+            a => a.reference === reference
+        );
+    
+        if (assignment) {
+    
+            status.innerHTML = `
+                <h2>Archive Located</h2>
+    
+                <p><strong>Reference:</strong> ${assignment.reference}</p>
+    
+                <p><strong>Status:</strong> ${assignment.status}</p>
+            `;
+    
+        } else {
+    
+            status.innerHTML = `
+                <h2>Archive Reference Not Recognised</h2>
+    
+                <p>
+                Please verify the Archive Reference printed on your Society Dossier.
+                </p>
+            `;
+    
+        }
+    
+    });
 });
