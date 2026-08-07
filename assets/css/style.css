@@ -34,6 +34,22 @@ body {
     overflow-x: hidden;
 }
 
+.equipment-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.equipment-list li {
+    margin: 10px 0;
+}
+
+.equipment-list li::before {
+    content: "✓ ";
+    color: var(--gold);
+    font-weight: bold;
+}
+
 .classification-banner {
 
     display: inline-block;
