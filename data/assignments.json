@@ -2,22 +2,22 @@
   "assignments": [
     {
       "reference": "SOE-0908-I",
-      "assignment": "assignment-1.json",
+     "assignment": "field-assignment-001.json",
       "status": "sealed"
     },
     {
       "reference": "SOE-0908-II",
-      "assignment": "assignment-2.json",
+      "assignment": "field-assignment-002",
       "status": "sealed"
     },
     {
       "reference": "SOE-0908-III",
-      "assignment": "assignment-3.json",
+      "assignment": "field-assignment-003",
       "status": "sealed"
     },
     {
       "reference": "SOE-0908-IV",
-      "assignment": "assignment-4.json",
+      "assignment": "field-assignment-004",
       "status": "sealed"
     }
   ]
