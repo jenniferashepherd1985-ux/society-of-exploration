@@ -1,3 +1,11 @@
+async function loadAssignment(filename) {
+
+    const response = await fetch(`data/${filename}`);
+
+    return await response.json();
+
+}
+
 let assignments = [];
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -29,13 +37,22 @@ document.addEventListener("DOMContentLoaded", () => {
     
         if (assignment) {
     
-            status.innerHTML = `
-                <h2>Archive Located</h2>
-    
-                <p><strong>Reference:</strong> ${assignment.reference}</p>
-    
-                <p><strong>Status:</strong> ${assignment.status}</p>
-            `;
+            loadAssignment(assignment.assignment)
+    .then(data => {
+
+                status.innerHTML = `
+                    <h2>${data.title}</h2>
+        
+                    <p><strong>Status:</strong> ${data.status}</p>
+        
+                    <p>${data.brief}</p>
+        
+                    <p><strong>Clearance:</strong> ${data.clearance}</p>
+        
+                    <p>${data.next}</p>
+                `;
+        
+            });
     
         } else {
     
