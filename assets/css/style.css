@@ -34,6 +34,26 @@ body {
     overflow-x: hidden;
 }
 
+.classification-banner {
+
+    display: inline-block;
+
+    padding: 6px 18px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    letter-spacing: 0.15em;
+
+    font-size: 0.8rem;
+
+    margin-bottom: 24px;
+
+    text-transform: uppercase;
+
+}
+
 /* Background */
 
 .background-overlay {
