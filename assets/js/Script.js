@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
 
     console.log(data);
-    alert("Assignment loaded");
 
     status.innerHTML = `
                 <div class="classification-banner">
