@@ -41,16 +41,38 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
 
                 status.innerHTML = `
-                    <h2>${data.title}</h2>
-        
-                    <p><strong>Status:</strong> ${data.status}</p>
-        
-                    <p>${data.brief}</p>
-        
-                    <p><strong>Clearance:</strong> ${data.clearance}</p>
-        
-                    <p>${data.next}</p>
-                `;
+                <h2>${data.title}</h2>
+            
+                <p><strong>Archive Reference</strong><br>${data.reference}</p>
+            
+                <p><strong>Classification</strong><br>${data.classification}</p>
+            
+                <p><strong>Security Clearance</strong><br>${data.clearance}</p>
+            
+                <p><strong>Status</strong><br>${data.status}</p>
+            
+                <hr>
+            
+                <h3>${data.briefingTitle}</h3>
+            
+                <p>${data.briefing.replace(/\n/g, "<br><br>")}</p>
+            
+                <hr>
+            
+                <h3>Required Equipment</h3>
+            
+                <ul>
+                    ${data.equipment.map(item => `<li>${item}</li>`).join("")}
+                </ul>
+            
+                <hr>
+            
+                <p><em>${data.authorisation}</em></p>
+            
+                <button class="archive-button" id="beginMission">
+                    Begin Field Assignment
+                </button>
+            `;
         
             });
     
