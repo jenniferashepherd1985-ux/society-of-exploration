@@ -79,11 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
             
                 <hr>
             
-                <p><em>${data.authorisation}</em></p>
-            
-                <button class="archive-button" id="beginMission">
-                    Begin Field Assignment
-                </button>
+                <hr>
+
+<h3>Society Instructions</h3>
+
+<p>${data.authorisation}</p>
+
+<p><strong>Discovery awaits.</strong></p>
             `;
         
             });
