@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
         if (assignment) {
     
+            document.getElementById("archive-form-container").style.display = "none";
+            
             loadAssignment(assignment.assignment)
     .then(data => {
 
