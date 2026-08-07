@@ -1,0 +1,19 @@
+# Society Website Changelog
+
+## v1.0.0 – Foundation Release
+
+### Added
+- Homepage
+- Society Archive page
+- Society branding
+- Shared stylesheet
+- Shared JavaScript
+- Responsive layout
+- GitHub Pages deployment
+- Archive Reference form
+- Dynamic placeholder archive response
+
+### Known limitations
+- Archive references are not yet validated.
+- Assignments are not loaded dynamically.
+- Verification system not yet implemented.
