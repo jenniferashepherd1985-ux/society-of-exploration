@@ -1,8 +1,22 @@
 {
+  "reference": "SOE-0908-I",
   "title": "Field Assignment No. 1",
-  "operation": "CLASSIFIED",
-  "status": "SEALED",
-  "brief": "This assignment has been authenticated by the Society of Exploration.",
+  "classification": "Level I – Confidential",
+  "status": "Authorised",
   "clearance": "Explorer",
-  "next": "Mission details remain classified until Phase 2."
+
+  "operation": "CLASSIFIED",
+
+  "briefingTitle": "Mission Briefing",
+
+  "briefing": "Explorer,\n\nThe Society has identified a location of historical significance hidden within London.\n\nYour task is to investigate the evidence contained within your Society Dossier, identify the correct destination and travel there.\n\nOnly once you have reached the correct location may the next stage of the archive be unlocked.",
+
+  "equipment": [
+    "Society Dossier",
+    "Pencil",
+    "Mobile Phone",
+    "Powers of Observation"
+  ],
+
+  "authorisation": "Your assignment has been authorised by the Society Council."
 }
