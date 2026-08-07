@@ -43,10 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
 
                 status.innerHTML = `
+                <div class="classification-banner">
+
+                    THE SOCIETY OF EXPLORATION
+            
+                </div>
+            
+                <h1>CONFIDENTIAL FIELD DOSSIER</h1>
+            
                 <h2>${data.title}</h2>
             
-                <p><strong>Archive Reference</strong><br>${data.reference}</p>
-            
+                <p><strong>Archive Reference</strong><br>${data.reference}</p>            
                 <p><strong>Classification</strong><br>${data.classification}</p>
             
                 <p><strong>Security Clearance</strong><br>${data.clearance}</p>
