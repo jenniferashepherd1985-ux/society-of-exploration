@@ -1,21 +1,50 @@
 let assignments = [];
 
+async function hashPassword(password) {
+
+    const encoder = new TextEncoder();
+
+    const data = encoder.encode(password);
+
+    const hashBuffer = await crypto.subtle.digest(
+        "SHA-256",
+        data
+    );
+
+    return Array.from(new Uint8Array(hashBuffer))
+        .map(byte => byte.toString(16).padStart(2, "0"))
+        .join("");
+
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     fetch("data/assignments.json")
         .then(response => response.json())
         .then(data => {
+
             assignments = data.assignments;
-            console.log("Verification assignments loaded:", assignments);
+
+            console.log(
+                "Verification assignments loaded:",
+                assignments
+            );
+
         })
         .catch(error => {
-            console.error("Unable to load assignments:", error);
+
+            console.error(
+                "Unable to load assignments:",
+                error
+            );
+
         });
 
     const form = document.getElementById("verification-form");
+
     const status = document.getElementById("verification-status");
 
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("submit", async function (event) {
 
         event.preventDefault();
 
@@ -50,9 +79,27 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
 
             return;
+
         }
 
-        if (password === assignment.password.toUpperCase()) {
+        if (!assignment.passwordHash) {
+
+            status.innerHTML = `
+                <h2>Archive Sealed</h2>
+
+                <p>
+                This field assignment has not yet been released
+                for verification.
+                </p>
+            `;
+
+            return;
+
+        }
+
+        const enteredHash = await hashPassword(password);
+
+        if (enteredHash === assignment.passwordHash) {
 
             status.innerHTML = `
                 <h2>Discovery Authenticated</h2>
@@ -62,25 +109,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 </p>
 
                 <p>
-                Your investigation has been successfully verified.
+                Your field investigation has been successfully verified.
                 </p>
 
                 <p>
-                <strong>Artefact Authorisation Granted</strong>
-                </p>
-
-                <p>
-                Discovery awaits.
+                <strong>Mission authorised.</strong>
                 </p>
             `;
 
         } else {
 
             status.innerHTML = `
-                <h2>Verification Unsuccessful</h2>
+                <h2>Discovery Not Authenticated</h2>
 
                 <p>
-                The Society cannot authenticate this discovery.
+                The Society cannot verify this solution.
                 </p>
 
                 <p>
