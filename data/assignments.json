@@ -2,8 +2,9 @@
   "assignments": [
     {
       "reference": "SOE-0908-I",
-     "assignment": "field-assignment-001.json",
-      "status": "sealed"
+      "assignment": "field-assignment-001.json",
+      "status": "sealed",
+      "passwordHash": "0dd59afa1ce8f021952ec5df3fc43d0e5d14748feee534a815a0dc897bbcc9e4"
     },
     {
       "reference": "SOE-0908-II",
