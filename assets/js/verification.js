@@ -25,26 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
             .trim()
             .toUpperCase();
 
+        const password = document
+            .getElementById("verificationPassword")
+            .value
+            .trim()
+            .toUpperCase();
+
         const assignment = assignments.find(
             a => a.reference === reference
         );
 
-        if (assignment) {
-
-            status.innerHTML = `
-                <h2>Archive Reference Recognised</h2>
-
-                <p>
-                Field Assignment authorised.
-                </p>
-
-                <p>
-                Please enter the Verification Password
-                discovered during your investigation.
-                </p>
-            `;
-
-        } else {
+        if (!assignment) {
 
             status.innerHTML = `
                 <h2>Archive Reference Not Recognised</h2>
@@ -55,6 +46,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <p>
                 Please verify the reference printed on your Society Mission Card.
+                </p>
+            `;
+
+            return;
+        }
+
+        if (password === assignment.password.toUpperCase()) {
+
+            status.innerHTML = `
+                <h2>Discovery Authenticated</h2>
+
+                <p>
+                The Society confirms your discovery.
+                </p>
+
+                <p>
+                Your investigation has been successfully verified.
+                </p>
+
+                <p>
+                <strong>Artefact Authorisation Granted</strong>
+                </p>
+
+                <p>
+                Discovery awaits.
+                </p>
+            `;
+
+        } else {
+
+            status.innerHTML = `
+                <h2>Verification Unsuccessful</h2>
+
+                <p>
+                The Society cannot authenticate this discovery.
+                </p>
+
+                <p>
+                Re-examine the evidence and try again.
                 </p>
             `;
 
