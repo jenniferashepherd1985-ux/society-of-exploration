@@ -13,10 +13,11 @@
   "passwordHash": "68c8453e579f238e04bfd41f4d46b89ee67b64d1f8b837b5eeb7e616dc4901f2"
   },
     {
-      "reference": "SOE-0908-III",
-      "assignment": "field-assignment-003",
-      "status": "sealed"
-    },
+  "reference": "SOE-0908-III",
+  "assignment": "field-assignment-003.json",
+  "status": "sealed",
+  "passwordHash": "a9e182d550c8ce871ab380c66cf6ec1964397ca0b05a9647227a9bb9aac0e600"
+},
     {
       "reference": "SOE-0908-IV",
       "assignment": "field-assignment-004",
